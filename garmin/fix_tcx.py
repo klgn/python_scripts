@@ -5,6 +5,10 @@ import xml.etree.ElementTree as ET
 import argparse
 
 
+# This script I used one day one of my workouts wan't uploaded from Garmin to Strava. So I downloaded the tcx from Garmin and looked at it.
+# The timestamps of the TrackPoints were completely off, so I wrote this scripts which fixes that. This takes the timestamp from the Id tag (which was correct in my case)
+# and changes first the Lap Tag as well as any Timestamp in the follwing TrackPoint Tags. But it makes sure to keep the relative time between the Lap and a Single Trackpoint intact.
+
 # Set up logging
 log = logging.getLogger()
 log.setLevel('INFO')
